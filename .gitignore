@@ -1,0 +1,69 @@
+# Operating System Files
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+.venv
+venv/
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+*.tar
+*.zip
+
+# Linux
+*~
+.directory
+
+# IDE and Editor Files
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs (DataGrip, IntelliJ, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Database Files
+*.db
+*.sqlite
+*.sqlite3
+*.mdb
+*.accdb
+*.bak
+*.log
+*.sql.bak
+
+# Temporary Files
+*.tmp
+*.temp
+~$*
+
+# Build and Distribution
+.dist/
+dist/
+build/
+
+# Backup Files
+*_backup.*
+*.old
+
+# Personal Notes (optional - uncomment if needed)
+# notes.txt
+# TODO.txt
