@@ -1,77 +1,149 @@
-# Database Midterm 2023 Solutions
+# 📚 Database Exam Preparation Guide
 
-## Query Solutions Summary
+comprehensive database exam study guide! This repository contains everything you need for your database midterm exam.
 
-| Problem | Description | Key Concepts | Status |
-|---------|-------------|--------------|--------|
-| **4a** | Films related to 'China' or 'India' | LIKE pattern matching with OR | Complete |
-| **4b** | Films with zero inventory | LEFT JOIN, NULL filtering | Complete |
-| **4c** | Film categories starting with 'A' | Multiple JOINs, RANK() window function | Complete |
-| **4d** | Top 5 customers per store by rentals | Window function with PARTITION BY | Complete |
-| **4e** | Rental length vs average comparison | Window functions, AGE(), CASE statement | Complete |
+---
 
-## Problem Details
+## 📁 What's Inside the `cheat_sheet` Folder?
 
-### 4a: Films Related to China or India
-**Output Columns:** film_id, title, description  
-**Technique:** String pattern matching using LIKE with OR operator  
-**Key Tables:** film
+### 1. **[Part I&II] past_ex.sql** - Past Exam Questions (Multiple Choice & True/False)
+   - **What it contains:** 31 past exam questions organized by 9 topics
+   - **Best for:** Understanding question patterns and testing your knowledge
+   - **Topics covered:**
+     - Normalization & Database Theory
+     - ER/EER Modeling & Entity-Relationship Diagrams
+     - Database Keys & Constraints
+     - SQL Commands (DDL & DML)
+     - SQL Queries (Basic & Advanced)
+     - PostgreSQL Database Concepts
+     - Data Warehouse & Business Intelligence
+     - Big Data & PySpark
 
-### 4b: Films with Zero Inventory
-**Output Columns:** film_id, title, total_inventory  
-**Technique:** LEFT JOIN to find films with no matching inventory records  
-**Key Tables:** film, inventory
+### 2. **[Part I&II] note_written_part.sql** - Theory & Concepts
+   - **What it contains:** Comprehensive notes on database fundamentals and theory
+   - **Best for:** Understanding concepts for written/theory questions
+   - **Topics covered:**
+     - Database Fundamentals (Data vs Information, Metadata, DBMS)
+     - Entity-Relationship (ER) Modeling
+     - Enhanced ER (EER) Modeling
+     - The Relational Model
+     - Normalization
+     - SQL Basics
 
-### 4c: Film Categories Starting with 'A'
-**Output Columns:** category_id, category_name, film_id, title, rank  
-**Technique:** Multiple table joins, RANK() window function for ordering  
-**Key Tables:** film, film_category, category
+### 3. **[Part III] mock_exam.sql** - SQL Practice Problems
+   - **What it contains:** Hands-on SQL queries organized by database tables
+   - **Best for:** Practicing SQL coding for Part III of the exam
+   - **How it's organized:** 
+     1. Customer Table queries
+     2. Payment Table queries
+     3. Actor Table queries
+     4. Inventory & Rental Table queries
+     5. Category Table queries
+     6. Film Table queries
+     7. Store & Staff Table queries
 
-### 4d: Top 5 Customers by Store
-**Output Columns:** store_id, customer_id, first_name, last_name, num_of_rental  
-**Technique:** Window functions with PARTITION BY to rank customers within each store  
-**Key Tables:** customer, rental, store
+### 4. **dvd_rental_erd.png** - Database Diagram
+   - **What it contains:** Entity-Relationship Diagram of the DVD rental database
+   - **Best for:** Understanding table relationships and foreign keys
 
-### 4e: Rental Length Comparison
-**Output Columns:** film_title, inventory_id, rental_id, rental_length, avg_length, rental_length_diff, type  
-**Technique:** Window functions with PARTITION BY, AGE() for date calculations, CASE for categorization  
-**Key Tables:** film, inventory, rental
+---
 
-## Database Information
+## 🎯 How to Prepare for Your Exam
 
-**Database:** dvdrental (PostgreSQL)  
-**Notebook:** `Database_Midterm_2023/database_midterm_2023_sql.ipynb`  
-**Connection:** Uses SQL magic commands (%sql, %%sql) for direct query execution
 
-## Contributing
+#### Step 1: Study Theory Notes
+1. Open **`[Part I&II] note_written_part.sql`**
+2. Read through all sections systematically
+3. Take notes on concepts you find challenging
+4. Focus on:
+   - Differences between entity types (Strong vs Weak vs Associative)
+   - Normalization rules (1NF, 2NF, 3NF, BCNF)
+   - EER concepts (Specialization, Generalization, Overlap, Disjoint)
+   - Key constraints (Primary Key, Foreign Key rules)
 
-Contributions are welcome! Here's how you can contribute:
+#### Step 2: Test Your Knowledge with Past Questions
+1. Open **`[Part I&II] past_ex.sql`**
+2. Go through each topic section one by one
+3. Try to answer questions BEFORE looking at the answer
+4. Read the "Why" explanations carefully - they reinforce concepts
+5. Keep track of questions you got wrong
+6. Review those topics again in the theory notes
 
-### Ways to Contribute
 
-1. **Improve Queries** - Optimize existing solutions or provide alternative approaches
-2. **Add Solutions** - Complete problem 4d or add new exercise solutions
-3. **Fix Issues** - Correct errors or improve query performance
-4. **Documentation** - Enhance explanations or add comments to complex queries
-5. **Share Practice** - Upload your own SQL homework or practice files
+---
 
-### How to Contribute
+#### Step 3: Understand the Database Structure
+1. Open **`dvd_rental_erd.png`**
+2. Study how tables are connected
+3. Identify primary keys (marked in diagrams)
+4. Trace foreign key relationships
+5. Understand which tables you need to JOIN for different queries
 
-1. Fork this repository
-2. Create a new branch for your changes
-3. Make your improvements:
-   - Add new `.sql` files to relevant folders (hw3, hw4, hw5, etc.)
-   - Update notebook files with new queries or improvements
-   - Document your changes in comments
-4. Test your queries against the dvdrental database
-5. Submit a pull request with a clear description of your changes
+#### Step 4: Practice SQL Queries
+1. Open **`[Part III] mock_exam.sql`**
+2. **How to use this file:**
+   ```
+   ┌─────────────────────────────────────────────┐
+   │ Step 1: Read the problem carefully          │
+   │ Step 2: Identify which tables are involved  │
+   │ Step 3: Use Ctrl+F to find similar examples │
+   │ Step 4: Try coding it yourself first        │
+   │ Step 5: Compare with the provided solution  │
+   └─────────────────────────────────────────────┘
+   ```
+3. **Practice in order:**
+   - Start with Customer table queries (easier)
+   - Progress to multi-table JOINs
+   - Master window functions (RANK, LEAD, FIRST_VALUE)
+   - Practice aggregations (COUNT, SUM, AVG)
 
-### Contribution Guidelines
+#### Step 5: Focus on Common SQL Patterns
+The mock exam file teaches you these essential patterns:
+- ✅ **Basic SELECT with WHERE** - Filtering rows
+- ✅ **JOINs** - Combining multiple tables
+- ✅ **GROUP BY with HAVING** - Aggregating data
+- ✅ **Window Functions** - RANK(), LEAD(), LAG(), FIRST_VALUE()
+- ✅ **Subqueries** - Nested SELECT statements
+- ✅ **Date/Time Functions** - EXTRACT(), age(), current_date
+- ✅ **String Functions** - LIKE, wildcards (%)
 
-- Ensure queries are tested and produce correct results
-- Use clear naming conventions for files and variables
-- Add comments explaining complex query logic
-- Follow PostgreSQL best practices
-- Include output column names in problem descriptions
+---
 
-Feel free to open issues for questions or suggestions. All contributions help make this a better learning resource for everyone studying databases and SQL. Issue me or Pr me 
+## 📋 Exam Day Checklist
+
+### For Part I & II (Theory/Multiple Choice):
+- [ ] Can you explain the difference between 2NF and 3NF?
+- [ ] Do you know when to use Weak Entity vs Associative Entity?
+- [ ] Can you identify Total vs Partial Specialization?
+- [ ] Do you understand Overlap vs Disjoint constraints?
+- [ ] Can you name DML vs DDL statements?
+- [ ] Do you know the difference between WHERE and HAVING?
+- [ ] Can you explain Facts vs Dimensions in data warehousing?
+
+### For Part III (SQL Coding):
+- [ ] Can you write a basic SELECT with WHERE clause?
+- [ ] Can you JOIN 2 or more tables correctly?
+- [ ] Can you use GROUP BY with aggregate functions?
+- [ ] Can you write subqueries?
+- [ ] Do you know how to use RANK() and window functions?
+- [ ] Can you use date functions (EXTRACT, age)?
+- [ ] Do you know the difference between LEFT JOIN and INNER JOIN?
+
+---
+
+
+## 🎓 Final Words
+
+**Remember:** 
+- Understanding > Memorization
+- Practice makes perfect
+- Review the "Why" explanations - they contain gold!
+- Don't panic if you don't know everything - focus on core concepts
+
+**You've got this! 💪**
+
+Good luck on your exam! 🍀
+
+---
+
+*Last Updated: February 2026*
