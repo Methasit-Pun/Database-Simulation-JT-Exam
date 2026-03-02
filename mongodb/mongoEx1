@@ -1,0 +1,35 @@
+use("test");
+db.sales.insertMany([
+  {
+    _id: 2,
+    item: "abc",
+    price: 10,
+    quantity: 2,
+    sales: 20,
+    date: new Date("2014-03-01T08:00"),
+  },
+  {
+    _id: 3,
+    item: "jkl",
+    price: 20,
+    quantity: 1,
+    sales: 20,
+    date: new Date("2014-03-01T09:00"),
+  },
+  {
+    _id: 4,
+    item: "xyz",
+    price: 5,
+    quantity: 10,
+    sales: 15,
+    date: new Date("2014-03-01T08:00"),
+  },
+  {
+    _id: 5,
+    item: "abc",
+    price: 30,
+    quantity: 2,
+    sales: 20,
+    date: new Date("2014-03-01T08:00"),
+  },
+]);
