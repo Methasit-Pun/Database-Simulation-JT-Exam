@@ -17,6 +17,16 @@ use(database)
 db.createCollection(collection)
 
 
+db.{action}.find(
+
+    {
+        $and 
+
+
+    }
+
+)
+
 
 // use('mongodbVSCodePlaygroundDB');
 
