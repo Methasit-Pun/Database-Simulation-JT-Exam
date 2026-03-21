@@ -12,7 +12,7 @@
 // Select the database to use.
 
 // Select the database to use
-use('playground');
+use('test');
 
 // 1. Show all documents in sales
 db.sales.find();
